@@ -1,0 +1,31 @@
+[package]
+name         = "edge-application-event-api"
+version      = "0.1.0"
+edition      = "2021"
+license      = "MIT OR Apache-2.0"
+rust-version = "1.95"
+authors      = ["SWE Engineering Labs"]
+repository   = "https://github.com/sweengineeringlabs/edge-application-event-api"
+description  = "edge-application-event — api/ layer only (port contract). Phase 1 of the api/core split, see edge-application#144."
+keywords     = ["domain", "event", "sea", "swe", "port"]
+categories   = ["development-tools"]
+
+[package.metadata.arch]
+application_type = "lib"
+service_type     = "event-api"
+
+[lib]
+path = "main/src/lib.rs"
+
+[dependencies]
+thiserror = "2"
+serde = { version = "1.0", features = ["derive"] }
+parking_lot = "0.12"
+tokio = { version = "1", features = ["sync"] }
+
+[lints.rust]
+unsafe_code = "deny"
+
+[lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
