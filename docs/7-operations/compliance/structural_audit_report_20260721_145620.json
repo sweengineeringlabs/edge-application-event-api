@@ -1,0 +1,1023 @@
+{
+  "timestamp": "2026-07-21T12:56:20.910720900+00:00",
+  "results": [
+    {
+      "id": "cargo_toml_exists",
+      "category": "project",
+      "description": "Every crate directory must contain a Cargo.toml manifest at its root.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 0.28650000000000003
+    },
+    {
+      "id": "docs_dir_exists",
+      "category": "project",
+      "description": "A docs/ directory must exist at the workspace root to house project-level.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 0.2872
+    },
+    {
+      "id": "build_bootstrap_exclusivity",
+      "category": "project",
+      "description": "The project root must not contain both a build.* script and a bootstrap.*.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "root_whitelist",
+      "category": "project",
+      "description": "Every file and directory at the project root must appear in the configured.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "single_architecture_config",
+      "category": "project",
+      "description": "Exactly one architecture.toml may exist — either at the project root or.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "doc_dir_exists",
+      "category": "project",
+      "description": "Library crates must have a doc/ or docs/ directory for design and API.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "examples_dir_lib",
+      "category": "project",
+      "description": "Library crates should have an examples/ directory demonstrating canonical.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "bootstrap_sh_exists",
+      "category": "project",
+      "description": "A bootstrap.sh (or build.sh) must exist at the workspace root to provide.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "bootstrap_ps1_exists",
+      "category": "project",
+      "description": "A bootstrap.ps1 (or build.ps1) must exist at the workspace root for.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "cargo_pkg_name_exists",
+      "category": "conventions",
+      "description": "Every crate must declare `package.name` in Cargo.toml.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 0.0216
+    },
+    {
+      "id": "cargo_pkg_version_exists",
+      "category": "conventions",
+      "description": "Every crate must declare `package.version` using semantic versioning.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 0.0074
+    },
+    {
+      "id": "cargo_pkg_edition_exists",
+      "category": "conventions",
+      "description": "Every crate must declare `package.edition` to pin which Rust language dialect it compiles under.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 0.0062
+    },
+    {
+      "id": "cargo_pkg_description_exists",
+      "category": "conventions",
+      "description": "Every crate must declare a one-line `package.description` stating what it does.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 0.01
+    },
+    {
+      "id": "cargo_pkg_repository_exists",
+      "category": "conventions",
+      "description": "Every crate should declare `package.repository` pointing to its source repository URL.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 0.0009
+    },
+    {
+      "id": "cargo_pkg_authors_exists",
+      "category": "conventions",
+      "description": "Every crate should declare `package.authors` listing the people or team responsible for it.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 0.026
+    },
+    {
+      "id": "cargo_pkg_rust_version_exists",
+      "category": "conventions",
+      "description": "Every crate should declare `package.rust-version` (MSRV) — the minimum Rust toolchain that can compile it.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 0.0129
+    },
+    {
+      "id": "cargo_pkg_keywords_exists",
+      "category": "conventions",
+      "description": "Library crates should declare up to 5 `package.keywords` to aid discovery on crates.io.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 0.0034000000000000002
+    },
+    {
+      "id": "cargo_pkg_categories_exists",
+      "category": "conventions",
+      "description": "Library crates should declare `package.categories` using valid crates.io category slugs.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 0.0028
+    },
+    {
+      "id": "readme_exists",
+      "category": "conventions",
+      "description": "A `README.md` must exist at the workspace or project root.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 0.2623
+    },
+    {
+      "id": "changelog_exists",
+      "category": "conventions",
+      "description": "A `CHANGELOG.md` must exist at the workspace root to record notable changes per release.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 0.2802
+    },
+    {
+      "id": "gitignore_has_target",
+      "category": "conventions",
+      "description": "`.gitignore` at the workspace root must contain a `target/` entry to exclude build artifacts.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 0.8630000000000001
+    },
+    {
+      "id": "cargo_pkg_name_kebab_case",
+      "category": "naming",
+      "description": "The [package].name in Cargo.toml must be all-lowercase kebab-case.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 1.0849
+    },
+    {
+      "id": "rs_files_snake_case",
+      "category": "naming",
+      "description": "Every .rs source file must use snake_case: all-lowercase, words separated by underscores.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 1.4147
+    },
+    {
+      "id": "rs_files_no_uppercase",
+      "category": "naming",
+      "description": "Source file names under main/src/ must contain no uppercase letters.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 0.9458
+    },
+    {
+      "id": "src_dir_exists",
+      "category": "package",
+      "description": "The configured source directory (default: main/src/) must exist in every.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 0.5487
+    },
+    {
+      "id": "no_nested_src_dir",
+      "category": "package",
+      "description": "A src/ directory must not exist inside main/src/ — the path.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 0.1507
+    },
+    {
+      "id": "no_gateway_in_lib",
+      "category": "package",
+      "description": "A library crate (application_type = 'lib') must not contain a gateway/.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 0.17029999999999998
+    },
+    {
+      "id": "no_weak_fs_patterns",
+      "category": "security",
+      "description": "Path construction must use `Path::join` (for host I/O) or a forward-slash-only abstraction (for emitted artifacts) — never `MAIN_SEPARATOR`, literal `\\\\`, or string-replace hacks.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 26.0852
+    },
+    {
+      "id": "tests_dir_exists",
+      "category": "test_organization",
+      "description": "Every crate must have a tests/ directory at the same level as main/src/ to house its integration and external tests.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 0.1304
+    },
+    {
+      "id": "api_facade_hides_core",
+      "category": "encapsulation",
+      "description": "api/ types must not expose internal core/ implementation types in their public signatures — parameters, return types, and associated types must all use api/-owned abstractions.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "saf_mod_no_api_direct_reexport",
+      "category": "interface",
+      "description": "saf/mod.rs and saf/<theme>/mod.rs must not contain `pub use crate::api::` — all api/ re-exports must live in a dedicated _svc.rs file.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "module_entry_declarations_only",
+      "category": "package",
+      "description": "mod.rs files must contain only mod declarations and pub use re-exports —.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "mod_rs_not_reexport_shim",
+      "category": "package",
+      "description": "A SEA layer's mod.rs must not consist solely of wildcard re-exports.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "deps_no_local_path",
+      "category": "conventions",
+      "description": "`[dependencies]` must not use `path = '...'` pointing outside the workspace; use git or registry sources.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "bench_harness_false",
+      "category": "conventions",
+      "description": "Every `[[bench]]` target must set `harness = false` when using criterion or a custom main function.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "lib_path_correct",
+      "category": "package",
+      "description": "The [lib] path declared in Cargo.toml must point to a file that actually.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "bin_path_correct",
+      "category": "package",
+      "description": "Every [[bin]] target declared in Cargo.toml must point to a source file.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "no_undeclared_benches",
+      "category": "package",
+      "description": "Every .rs file inside benches/ must have a corresponding [[bench]] target.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "example_targets_if_dir",
+      "category": "package",
+      "description": "If an examples/ directory exists it must have at least one [[example]].",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "test_targets_declared",
+      "category": "test_organization",
+      "description": "Every .rs file under tests/ must have a matching [[test]] entry in Cargo.toml so it participates in `cargo test`.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "no_undeclared_tests",
+      "category": "test_organization",
+      "description": "Every .rs file in tests/ must be registered in Cargo.toml; orphan test files that Cargo never compiles must be declared or deleted.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "test_paths_resolve",
+      "category": "test_organization",
+      "description": "Every [[test]] path declared in Cargo.toml must point to a file that exists on disk.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "no_explicit_test_targets",
+      "category": "test_organization",
+      "description": "Cargo.toml must not contain explicit [[test]] entries — Cargo auto-discovers every .rs file directly under tests/ as a test target.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "service_type_defined",
+      "category": "application_type",
+      "description": "Every non-workspace crate must declare its functional role via `service_type` in `[package.metadata.arch]` so the engine can verify the matching trait and contract are present.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "config_methods_pub_crate",
+      "category": "encapsulation",
+      "description": "Config struct methods must be pub(crate), not pub — Config is internal wiring resolved at the composition root, not public API.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "cross_crate_error_coupling",
+      "category": "encapsulation",
+      "description": "A crate's saf/ or api/ must not expose another crate's error type in a Result return position — wrap it in a locally owned error type.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "error_types_in_api",
+      "category": "interface",
+      "description": "Error types returned from api/ trait methods must be declared in api/, never in core/.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "suggest_builder_pattern",
+      "category": "conventions",
+      "description": "Structs with 5+ fields or 3+ `Option<T>` fields should have a companion `*Builder` type to avoid telescoping constructors.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "module_name_not_prefix_type",
+      "category": "naming",
+      "description": "A type name must not repeat its enclosing module name as a prefix.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "package_name_no_sea_suffix",
+      "category": "naming",
+      "description": "Package names must not end with a SEA layer suffix (-api, -core, -saf, -spi, -gateway).",
+      "result": {
+        "status": "fail",
+        "violations": [
+          {
+            "check_id": "package_name_no_sea_suffix",
+            "path": "Cargo.toml",
+            "message": "Package name 'edge-application-event-api' ends with '-api' which is a reserved SEA layer suffix (configured labels: [\"api\", \"core\", \"spi\", \"saf\", \"gateway\"])",
+            "severity": "error",
+            "rule_type": "builtin:package_name_no_sea_suffix",
+            "expected": "not ending with any of: -api, -core, -spi, -saf, -gateway",
+            "actual": "edge-application-event-api",
+            "fix_hint": "SEA layers are internal crate structure (main/src/api/, main/src/core/, etc.), not separate packages. Rename the package to avoid the reserved suffix.",
+            "llm_prompt": "WHAT: Package names must not end with a SEA layer suffix (-api, -core, -saf, -spi, -gateway).\n\nWHY: SEA layers (api/, core/, saf/, spi/, gateway/) are internal directory structure\nwithin a crate, not separate packages. A package named `auth-api` implies that `api/`\nis its entire domain, misleading consumers about what the crate provides.\n\nBEFORE (violating):\n  name = \"swe-architect-review-core\"  // ❌ '-core' implies a layer, not a domain\n  name = \"auth-api\"                    // ❌ '-api' is a reserved layer suffix\n\nAFTER (compliant):\n  name = \"swe-architect-review\"        // ✅ domain name only\n  name = \"auth\"                        // ✅ or \"auth-service\", \"auth-engine\"\n\nEDGE CASES:\n- `-api` in names like `my-rest-api` where 'api' describes the product interface (not a SEA layer) — context matters; flag is conservative so review each case.\n- Custom sea_layers config may define different reserved suffixes; check [config] sea_levels in architecture.policy.toml.\n",
+            "remediation_strategy": "manual",
+            "principles": [
+              "screaming_architecture",
+              "separation_of_concerns"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "module_names_match",
+      "category": "naming",
+      "description": "Every `mod foo;` declaration must have a corresponding `foo.rs` or `foo/mod.rs` on disk.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "folder_names_snake_case",
+      "category": "naming",
+      "description": "Directory names under main/src/ must be snake_case — all lowercase, underscores only.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "bin_names_valid",
+      "category": "naming",
+      "description": "[[bin]] target names in Cargo.toml must be lowercase with only hyphens or underscores.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "trait_names_not_plural",
+      "category": "naming",
+      "description": "Trait names must be singular nouns, not plurals.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "config_file_to_builder_naming",
+      "category": "naming",
+      "description": "Each `.toml` config file must have a corresponding `<Name>ConfigBuilder` struct.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "no_default_suffix",
+      "category": "naming",
+      "description": "Struct and enum names must not end with `Default` — use the `Default*` prefix instead.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "module_names_no_stutter",
+      "category": "naming",
+      "description": "A file or directory name must not begin and end with the same snake_case token (stutter).",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "layer_structural_name_ban",
+      "category": "naming",
+      "description": "File stems and type names must not start with a token from [config.naming] banned_prefix_tokens, or end with one from banned_suffix_tokens (both default to: trait, interface, type, api, core, spi, dto, vo, struct, impl; banned_suffix_tokens also includes ext).",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "cargo_pkg_name_has_prefix",
+      "category": "naming",
+      "description": "Every workspace member package name must share the common workspace prefix.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "boundary_dep_direction",
+      "category": "interface",
+      "description": "Domain (business-logic) crates must not list adapter (infrastructure/IO) crates as Cargo dependencies.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "boundary_no_pub_trait_in_adapter",
+      "category": "interface",
+      "description": "Adapter crates must not define public traits — all port contracts must be owned by the domain crate.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "boundary_adapter_implements_port",
+      "category": "interface",
+      "description": "Every adapter crate must implement at least one pub trait declared in a domain crate.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "boundary_no_antipattern_names",
+      "category": "naming",
+      "description": "Crate names must not end with catch-all suffixes: -core, -utils, -api, -common, -shared, -helpers.",
+      "result": {
+        "status": "fail",
+        "violations": [
+          {
+            "check_id": "boundary_no_antipattern_names",
+            "path": "\\\\?\\C:\\Users\\elvis\\AppData\\Local\\Temp\\claude\\C--phd-systems-swelabs-edge-application\\a57ecf5d-2e31-48bd-bd62-59de48fb95c6\\scratchpad\\api-repos\\event-api\\Cargo.toml",
+            "message": "crate `edge-application-event-api` uses anti-pattern suffix `-api`",
+            "severity": "error",
+            "rule_type": "builtin:boundary_no_antipattern_names",
+            "expected": "crate name must not end with a generic responsibility suffix",
+            "actual": "`edge-application-event-api` ends with `-api`",
+            "fix_hint": "rename to reflect the specific replacement boundary this crate represents (e.g. `-storage`, `-installer`, `-egress-http`)",
+            "llm_prompt": "WHAT: Crate names must not end with catch-all suffixes: -core, -utils, -api, -common, -shared, -helpers.\n\nWHY: Generic suffixes are naming debt. A crate named `auth-utils` can grow to contain\nanything vaguely related to authentication. A crate named `auth-token-store` or\n`auth-session-egress` declares exactly what it does and prevents scope creep.\nSpecific names enforce single responsibility at the crate boundary level.\n\nBEFORE (violating):\n  name = \"swe-architect-utils\"    // ❌ what does it do?\n  name = \"auth-common\"            // ❌ unbounded scope\n  name = \"payment-helpers\"        // ❌ catch-all\n\nAFTER (compliant):\n  name = \"swe-architect-file-scanner\"  // ✅ specific domain\n  name = \"auth-token-store\"            // ✅ what it stores\n  name = \"payment-receipt-formatter\"   // ✅ what it formats\n\nEDGE CASES:\n- `-core` is also a reserved SEA layer suffix (see `package_name_no_sea_suffix`); these violations overlap.\n- If the crate genuinely provides utilities for a specific domain (e.g. string parsing), name it for the domain: `string-parser`, not `string-utils`.\n",
+            "remediation_strategy": "manual",
+            "principles": [
+              "boundary_integrity",
+              "naming_consistency"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "license_field_exists",
+      "category": "conventions",
+      "description": "Every crate must declare `package.license` (SPDX expression) or `package.license-file` (path to a LICENSE file).",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "crate_root_exists",
+      "category": "package",
+      "description": "Every non-workspace crate must have main/src/lib.rs (library) or.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "benches_dir_if_declared",
+      "category": "package",
+      "description": "If Cargo.toml declares [[bench]] targets, a benches/ directory must exist.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "src_no_path_stutter",
+      "category": "package",
+      "description": "No directory path under main/src/ may contain the same segment twice.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "file_names_are_nouns",
+      "category": "naming",
+      "description": "Source file names must be nouns — not verb phrases or boolean assertions.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "library_entry_declarations_only",
+      "category": "package",
+      "description": "lib.rs must contain only module declarations (mod, pub mod) and.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "sea_layer_substantive_code",
+      "category": "package",
+      "description": "Every file in a SEA layer directory must contain substantive Rust code —.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "lib_rs_not_shim",
+      "category": "package",
+      "description": "lib.rs must declare its submodules explicitly — it must not consist only.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "sea_layer_min_loc",
+      "category": "package",
+      "description": "Each SEA layer directory must meet a minimum lines-of-code threshold:.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "lib_path_inside_src",
+      "category": "package",
+      "description": "The [lib] path and all [[bin]] paths in Cargo.toml must point to files.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "structural_checks_match_lib_path",
+      "category": "package",
+      "description": "A non-standard [lib] path and a main/src/ directory must not coexist —.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "no_unused_deps",
+      "category": "conventions",
+      "description": "Every entry in `[dependencies]` must be imported somewhere in `main/src/`; test-only deps belong in `[dev-dependencies]`.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "test_file_suffixes",
+      "category": "test_organization",
+      "description": "Every test file in tests/ must end in a recognised category suffix so the test kind is unambiguous from the filename.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "test_file_prefix_matches_source",
+      "category": "test_organization",
+      "description": "Every test file's name prefix must resolve to a real source module in main/src/, optionally followed by a public function name from that module.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "layer_scoped_test_source_correspondence",
+      "category": "test_organization",
+      "description": "A test file with a layer prefix (e.g. core_scanner_int_test.rs) must have a corresponding source file at main/src/<layer>/scanner.rs (or scanner/mod.rs).",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "test_fn_scenario_path_coverage",
+      "category": "test_organization",
+      "description": "Any test file that uses the _happy scenario suffix must also contain at least one _error or _edge test — happy-path-only coverage with scenario labels is incomplete.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "test_not_placeholder",
+      "category": "test_organization",
+      "description": "A #[test] function body must not consist solely of panic!, todo!(), unimplemented!(), or be empty — such tests cannot fail and prove nothing.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "test_no_self_comparison",
+      "category": "test_organization",
+      "description": "An assertion must not compare a value to itself (assert_eq!(x.is_ok(), x.is_ok())), because such comparisons are always true and catch no bug.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "test_assertion_not_weak_only",
+      "category": "test_organization",
+      "description": "A test that only checks is_ok() or is_some() — with no payload assertion and no negative counterpart — is too weak to catch wrong-value bugs.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "test_has_real_assertion",
+      "category": "test_organization",
+      "description": "Every #[test] function must contain at least one assertion macro (assert!, assert_eq!, assert_ne!, assert!(matches!(...))) or be annotated #[should_panic].",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "test_coverage_threshold",
+      "category": "test_organization",
+      "description": "The pipeline measures line coverage with cargo llvm-cov; the package must reach the threshold in config.dynamic_checks.coverage_min_line_pct.",
+      "result": {
+        "status": "skip",
+        "reason": "dynamic check — enforced by the pipeline, not static audit"
+      }
+    },
+    {
+      "id": "test_mutation_score",
+      "category": "test_organization",
+      "description": "cargo-mutants must report no more than config.dynamic_checks.mutation_max_missed surviving mutants; each surviving mutant is a line that tests never falsify.",
+      "result": {
+        "status": "skip",
+        "reason": "dynamic check — enforced by the pipeline, not static audit"
+      }
+    },
+    {
+      "id": "test_fn_prefixes",
+      "category": "test_organization",
+      "description": "Test functions in tests/<file>.rs must follow <feature>_<type_kind>_<fn>_<suffix>; functions in tests/<feature>/<file>.rs drop the feature prefix.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "test_fn_suffixes",
+      "category": "test_organization",
+      "description": "Every #[test] function name must either start with test_ or end in a recognised category suffix (_test, _int_test, _e2e_test, _perf_test, etc.).",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "unit_tests_colocated",
+      "category": "test_organization",
+      "description": "Files in api/, saf/, and gateway/ must not have inline #[cfg(test)] blocks that test public functions — those tests must live in external tests/ files.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "no_test_in_src",
+      "category": "test_organization",
+      "description": "Any #[test] function in main/src/ that is not inside a #[cfg(test)] block is test code leaking into the production build.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "all_methods_tested",
+      "category": "test_organization",
+      "description": "Every pub fn in main/src/ must have at least one test function whose name contains the function's name.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "test_covers_annotation",
+      "category": "test_organization",
+      "description": "Every #[test] function must have a `/// @covers: fn_name` doc comment linking it to the production function it exercises.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "no_mocks_in_integration",
+      "category": "test_organization",
+      "description": "Files named *_int_test.rs must not import mock libraries (mockall, mockito, etc.) or use generated Mock* types — integration tests must exercise real implementations.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "deps_have_integration_tests",
+      "category": "test_organization",
+      "description": "Every external crate listed in [dependencies] that is used in main/src/ must have at least one *_int_test.rs or *_e2e_test.rs file that imports and exercises it.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "test_location_by_deps",
+      "category": "test_organization",
+      "description": "A test file's suffix must match its actual dependency scope: _test.rs for same-module imports only, _e2e_test.rs for intra-crate imports, _int_test.rs for external crate imports.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "no_println_in_library_code",
+      "category": "conventions",
+      "description": "Library code must not call `println!` or `eprintln!`; use `tracing::info!` / `warn!` / `error!` instead.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "no_allow_unused_imports",
+      "category": "conventions",
+      "description": "Source files must not use `#[allow(unused_imports)]` to silence the lint; the import must be removed instead.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "embed_config_needs_override",
+      "category": "conventions",
+      "description": "`include_str!` embedding a config or policy file must be paired with a runtime `std::fs::read_to_string` path; the embed is a fallback, not the sole source.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "no_bare_unwrap",
+      "category": "conventions",
+      "description": "`.unwrap()` calls in production source are forbidden; use `?`, `match`, or `unwrap_or_else` instead.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "no_bare_expect",
+      "category": "conventions",
+      "description": "`.expect('')` or `.expect('TODO')` (empty or placeholder messages) are forbidden; provide a meaningful invariant description or use `?`.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "no_panic_in_lib",
+      "category": "conventions",
+      "description": "`panic!()` calls are forbidden in library code; return `Result<_, E>` and propagate errors instead.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "clippy_error_lints_configured",
+      "category": "conventions",
+      "description": "`Cargo.toml` must configure `[lints.clippy]` with `unwrap_used` and `expect_used` set to `'deny'` or `'warn'`.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "no_allow_dead_code",
+      "category": "conventions",
+      "description": "`#[allow(dead_code)]` and `#[expect(dead_code)]` are forbidden in production source; dead items must be deleted or wired in.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "xdg_dirs_crate",
+      "category": "security",
+      "description": "CLI binaries must resolve user-specific directories (config, data, cache) through the `dirs` crate rather than constructing paths manually.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "no_hardcoded_home_paths",
+      "category": "security",
+      "description": "Source code must not contain literal home-directory path segments (`/home/`, `~/`, `/Users/`, `C:\\Users\\`).",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "no_stub_fn_bodies",
+      "category": "test_organization",
+      "description": "Production functions in main/src/ must not have stub bodies consisting of todo!(), unimplemented!(), or an empty body — these panic at runtime and are never safe to ship.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "security_no_hardcoded_secrets",
+      "category": "security",
+      "description": "Source files must not contain literal credential values — API keys, passwords, tokens, private keys, or connection strings with embedded credentials.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "security_policy_file_exists",
+      "category": "security",
+      "description": "Every project must have a `SECURITY.md` (or `.github/SECURITY.md`) documenting how to report vulnerabilities and which versions are supported.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "security_unsafe_documented",
+      "category": "security",
+      "description": "Every `unsafe { ... }` block must be immediately preceded by a `// SAFETY:` comment that explains why the operation is sound.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "security_dependency_audit_configured",
+      "category": "security",
+      "description": "The project must have `cargo-deny` (via `deny.toml`) or `cargo audit` wired into CI to scan dependencies against the RustSec advisory database.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "application_type_defined",
+      "category": "application_type",
+      "description": "Every crate must declare its architectural role via `application_type` in `[package.metadata.arch]` so the engine knows which SEA layer rules apply.",
+      "result": {
+        "status": "pass"
+      }
+    }
+  ],
+  "summary": {
+    "total": 110,
+    "passed": 106,
+    "failed": 2,
+    "skipped": 2,
+    "duration_ms": 280.6721
+  },
+  "project_layout": "library",
+  "application_type": "lib",
+  "rule_labels": {
+    "core_filename_matches_type": [
+      "core",
+      "spi"
+    ],
+    "core_types_name_cohesive": [
+      "core",
+      "spi"
+    ],
+    "no_traits_in_impl_layer": [
+      "core",
+      "spi"
+    ],
+    "no_loose_core_files": [
+      "core",
+      "spi"
+    ],
+    "core_impl_name_has_trait_suffix": [
+      "core",
+      "spi"
+    ],
+    "core_structs_have_trait": [
+      "core",
+      "spi"
+    ],
+    "core_structs_not_pub": [
+      "core",
+      "spi"
+    ]
+  },
+  "active_filters": [
+    "halted_at=package"
+  ],
+  "gate_pipeline": [
+    {
+      "name": "project",
+      "status": "pass"
+    },
+    {
+      "name": "workspace",
+      "status": "skipped"
+    },
+    {
+      "name": "package",
+      "status": "fail",
+      "violations": 2
+    },
+    {
+      "name": "api",
+      "status": "skipped"
+    },
+    {
+      "name": "core",
+      "status": "skipped"
+    },
+    {
+      "name": "spi",
+      "status": "skipped"
+    },
+    {
+      "name": "saf",
+      "status": "skipped"
+    },
+    {
+      "name": "gateway",
+      "status": "skipped"
+    }
+  ],
+  "halted_at": "package"
+}

@@ -22,6 +22,7 @@ pub use event::EventSource;
 pub use event::EventSourceRecvNextRequest;
 pub use event::EventSourceRecvNextResponse;
 pub use event::EventStore;
+pub use event::EventStoreSvc;
 pub use event::EventStoreAppendRequest;
 pub use event::EventStoreAppendResponse;
 pub use event::EventStoreError;

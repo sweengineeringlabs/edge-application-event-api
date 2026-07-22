@@ -52,3 +52,4 @@ pub use api::EventBus;
 pub use api::EventPublisher;
 pub use api::EventSource;
 pub use api::EventStore;
+pub use api::EventStoreSvc;

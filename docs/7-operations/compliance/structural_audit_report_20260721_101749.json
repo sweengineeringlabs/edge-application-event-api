@@ -1,0 +1,250 @@
+{
+  "timestamp": "2026-07-21T08:17:49.950402400+00:00",
+  "results": [
+    {
+      "id": "cargo_toml_exists",
+      "category": "project",
+      "description": "Every crate directory must contain a Cargo.toml manifest at its root.",
+      "result": {
+        "status": "pass"
+      },
+      "duration_ms": 0.3344
+    },
+    {
+      "id": "docs_dir_exists",
+      "category": "project",
+      "description": "A docs/ directory must exist at the workspace root to house project-level.",
+      "result": {
+        "status": "fail",
+        "violations": [
+          {
+            "check_id": "docs_dir_exists",
+            "path": "docs",
+            "message": "Directory 'docs' does not exist",
+            "severity": "error",
+            "rule_type": "dir_exists",
+            "expected": "docs",
+            "actual": "missing",
+            "fix_hint": "Create the directory 'docs'",
+            "llm_prompt": "WHAT: A docs/ directory must exist at the workspace root to house project-level\ndocumentation.\n\nWHY: Without a dedicated docs/ location, ADRs, design decisions, and onboarding\nguides end up scattered in README files, wikis, or not written at all. A\nconsistent location signals to contributors where to look and where to add.\n\nBEFORE (violating):\n  /\n    Cargo.toml\n    README.md         # sole documentation location  ❌\n\nAFTER (compliant):\n  /\n    docs/\n      1-requirements/\n      2-design/\n      3-operations/   ✅\n    Cargo.toml\n    README.md\n\nEDGE CASES:\n- doc/ (singular) is also accepted by the rule — either spelling satisfies it.\n- The directory must contain at least one file; an empty docs/ directory may\n  still trigger downstream content checks.\n- This rule applies at the workspace or project root only, not per-crate.\n",
+            "remediation_strategy": "declarative",
+            "principles": [
+              "single_source_of_truth",
+              "locality_of_reference",
+              "screaming_architecture"
+            ]
+          }
+        ]
+      },
+      "duration_ms": 0.1374
+    },
+    {
+      "id": "build_bootstrap_exclusivity",
+      "category": "project",
+      "description": "The project root must not contain both a build.* script and a bootstrap.*.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "root_whitelist",
+      "category": "project",
+      "description": "Every file and directory at the project root must appear in the configured.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "single_architecture_config",
+      "category": "project",
+      "description": "Exactly one architecture.toml may exist — either at the project root or.",
+      "result": {
+        "status": "pass"
+      }
+    },
+    {
+      "id": "doc_dir_exists",
+      "category": "project",
+      "description": "Library crates must have a doc/ or docs/ directory for design and API.",
+      "result": {
+        "status": "fail",
+        "violations": [
+          {
+            "check_id": "doc_dir_exists",
+            "path": null,
+            "message": "Neither doc/ nor docs/ directory exists (recommended for libraries)",
+            "severity": "info",
+            "rule_type": "builtin:doc_dir_exists",
+            "expected": "doc/ or docs/",
+            "actual": "missing",
+            "fix_hint": "Create a docs/ directory for project documentation",
+            "llm_prompt": "WHAT: Library crates must have a doc/ or docs/ directory for design and API\ndocumentation.\n\nWHY: Rust doc comments (///) generate API docs, but they do not capture design\nintent, architectural decisions, or onboarding narrative. A docs/ directory is\nthe designated home for that longer-form content, making it discoverable to\nanyone cloning the repository.\n\nBEFORE (violating):\n  scm/my-lib/\n    Cargo.toml\n    main/src/lib.rs   # no docs/ directory  ❌\n\nAFTER (compliant):\n  scm/my-lib/\n    Cargo.toml\n    docs/\n      design.md       ✅\n    main/src/lib.rs\n\nEDGE CASES:\n- Both doc/ and docs/ satisfy this rule; pick one convention and stick to it\n  within the workspace.\n- The directory must contain at least one file to avoid triggering content\n  checks downstream.\n",
+            "remediation_strategy": "declarative",
+            "principles": [
+              "screaming_architecture",
+              "locality_of_reference"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "examples_dir_lib",
+      "category": "project",
+      "description": "Library crates should have an examples/ directory demonstrating canonical.",
+      "result": {
+        "status": "fail",
+        "violations": [
+          {
+            "check_id": "examples_dir_lib",
+            "path": null,
+            "message": "examples/ directory does not exist (recommended for libraries)",
+            "severity": "info",
+            "rule_type": "builtin:examples_dir_lib",
+            "expected": "examples/",
+            "actual": "missing",
+            "fix_hint": "Create an examples/ directory with usage examples",
+            "llm_prompt": "WHAT: Library crates should have an examples/ directory demonstrating canonical\nusage patterns.\n\nWHY: Examples are the fastest way for consumers to understand how to use the\nlibrary. Without them, consumers must read tests or the implementation to\nreverse-engineer usage, which is friction that leads to incorrect or\nfragile integrations.\n\nBEFORE (violating):\n  scm/my-lib/\n    Cargo.toml\n    main/src/lib.rs   # no examples/  ❌\n\nAFTER (compliant):\n  scm/my-lib/\n    Cargo.toml\n    examples/\n      basic.rs        # fn main() showing the golden path  ✅\n    main/src/lib.rs\n\nEDGE CASES:\n- Add the corresponding [[example]] entries in Cargo.toml so `cargo run --example basic` works.\n- This rule is info severity — it does not block CI but is a quality signal.\n- Gateway and binary crates are exempt; this is library-focused.\n",
+            "remediation_strategy": "declarative",
+            "principles": [
+              "screaming_architecture",
+              "locality_of_reference"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "bootstrap_sh_exists",
+      "category": "project",
+      "description": "A bootstrap.sh (or build.sh) must exist at the workspace root to provide.",
+      "result": {
+        "status": "fail",
+        "violations": [
+          {
+            "check_id": "bootstrap_sh_exists",
+            "path": "bootstrap.sh",
+            "message": "Neither bootstrap.sh nor build.sh exists at project root",
+            "severity": "error",
+            "rule_type": "builtin:bootstrap_sh_exists",
+            "expected": "bootstrap.sh or build.sh",
+            "actual": "missing",
+            "fix_hint": "Create bootstrap.sh (preferred) or build.sh for project setup",
+            "llm_prompt": "WHAT: A bootstrap.sh (or build.sh) must exist at the workspace root to provide\na single Unix onboarding command.\n\nWHY: Without it, new contributors must infer setup steps from tribal knowledge\nor scattered docs. A single script encodes the canonical first-run procedure\nand serves as the living reference for CI as well.\n\nBEFORE (violating):\n  /                 # no bootstrap.sh, no build.sh  ❌\n    Cargo.toml\n    README.md\n\nAFTER (compliant):\n  /\n    bootstrap.sh    # #!/usr/bin/env bash; set -euo pipefail; cargo build  ✅\n    Cargo.toml\n\nEDGE CASES:\n- Prefer bootstrap.sh over build.sh — bootstrap connotes environment setup\n  (tool installation, env vars) whereas build implies only compilation.\n- Do not have both bootstrap.sh AND build.sh simultaneously (see build_bootstrap_exclusivity).\n- Make the file executable: chmod +x bootstrap.sh.\n",
+            "remediation_strategy": "declarative",
+            "principles": [
+              "single_source_of_truth",
+              "humble_object",
+              "screaming_architecture"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "bootstrap_ps1_exists",
+      "category": "project",
+      "description": "A bootstrap.ps1 (or build.ps1) must exist at the workspace root for.",
+      "result": {
+        "status": "fail",
+        "violations": [
+          {
+            "check_id": "bootstrap_ps1_exists",
+            "path": "bootstrap.ps1",
+            "message": "Neither bootstrap.ps1 nor build.ps1 exists at project root",
+            "severity": "error",
+            "rule_type": "builtin:bootstrap_ps1_exists",
+            "expected": "bootstrap.ps1 or build.ps1",
+            "actual": "missing",
+            "fix_hint": "Create bootstrap.ps1 (preferred) or build.ps1 for Windows setup",
+            "llm_prompt": "WHAT: A bootstrap.ps1 (or build.ps1) must exist at the workspace root for\nWindows contributors who use PowerShell.\n\nWHY: Unix shell scripts (.sh) are not executable on Windows by default.\nWithout a .ps1 counterpart, Windows developers must guess at the equivalent\ncommands, leading to environment drift between platforms.\n\nBEFORE (violating):\n  /\n    bootstrap.sh    # Unix only  ❌\n    Cargo.toml\n\nAFTER (compliant):\n  /\n    bootstrap.sh    # Unix  ✅\n    bootstrap.ps1   # Windows  ✅\n    Cargo.toml\n\nEDGE CASES:\n- The .ps1 script should mirror the .sh steps exactly — same tool versions,\n  same build flags, same environment variables.\n- Add `#Requires -Version 5.1` at the top to enforce minimum PowerShell version.\n- Do not have both bootstrap.ps1 AND build.ps1 simultaneously.\n",
+            "remediation_strategy": "declarative",
+            "principles": [
+              "single_source_of_truth",
+              "humble_object",
+              "screaming_architecture"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "total": 9,
+    "passed": 4,
+    "failed": 5,
+    "skipped": 0,
+    "duration_ms": 23.440800000000003
+  },
+  "project_layout": "library",
+  "application_type": "lib",
+  "rule_labels": {
+    "no_loose_core_files": [
+      "core",
+      "spi"
+    ],
+    "core_filename_matches_type": [
+      "core",
+      "spi"
+    ],
+    "core_structs_have_trait": [
+      "core",
+      "spi"
+    ],
+    "core_impl_name_has_trait_suffix": [
+      "core",
+      "spi"
+    ],
+    "core_structs_not_pub": [
+      "core",
+      "spi"
+    ],
+    "core_types_name_cohesive": [
+      "core",
+      "spi"
+    ],
+    "no_traits_in_impl_layer": [
+      "core",
+      "spi"
+    ]
+  },
+  "active_filters": [
+    "halted_at=project"
+  ],
+  "gate_pipeline": [
+    {
+      "name": "project",
+      "status": "fail",
+      "violations": 5
+    },
+    {
+      "name": "workspace",
+      "status": "skipped"
+    },
+    {
+      "name": "package",
+      "status": "skipped"
+    },
+    {
+      "name": "api",
+      "status": "skipped"
+    },
+    {
+      "name": "core",
+      "status": "skipped"
+    },
+    {
+      "name": "spi",
+      "status": "skipped"
+    },
+    {
+      "name": "saf",
+      "status": "skipped"
+    },
+    {
+      "name": "gateway",
+      "status": "skipped"
+    }
+  ],
+  "halted_at": "project"
+}

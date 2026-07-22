@@ -1,3 +1,9 @@
+# SEA `boundary_no_antipattern_names` / `package_name_no_sea_suffix` tradeoff (accepted):
+# `-api` is a project-wide, deliberate naming convention across all 19 repos extracted by
+# edge-application#144's phase-1 api/core split — it marks "the api/ layer of this domain,
+# standalone repo", not a generic catch-all and not an internal SEA layer directory being
+# mistaken for a package. Renaming would fight the convention #144 itself established and
+# would require a coordinated rename across every extracted repo and consumer.
 [package]
 name         = "edge-application-event-api"
 version      = "0.1.0"
@@ -22,6 +28,16 @@ thiserror = "2"
 serde = { version = "1.0", features = ["derive"] }
 parking_lot = "0.12"
 tokio = { version = "1", features = ["sync"] }
+edge-application-service-api = { git = "https://github.com/sweengineeringlabs/edge-application-service-api.git", branch = "dev" }
+
+[dev-dependencies]
+tokio = { version = "1", features = ["macros", "rt", "rt-multi-thread"] }
+async-trait = "0.1"
+edge-application-base-api = { git = "https://github.com/sweengineeringlabs/edge-application-base-api.git", branch = "dev" }
+edge-application-handler-api = { git = "https://github.com/sweengineeringlabs/edge-application-handler-api.git", branch = "dev" }
+edge-application-command-api = { git = "https://github.com/sweengineeringlabs/edge-application-command-api.git", branch = "dev" }
+edge-application-observer-api = { git = "https://github.com/sweengineeringlabs/edge-application-observer-api.git", branch = "dev" }
+edge-security-runtime = { git = "https://github.com/sweengineeringlabs/edge-security.git", tag = "v0.3.7" }
 
 [lints.rust]
 unsafe_code = "deny"
@@ -29,3 +45,21 @@ unsafe_code = "deny"
 [lints.clippy]
 unwrap_used = "deny"
 expect_used = "deny"
+
+# LOCAL-ONLY: the #145-staleness port (base-api's context domain + security bridge,
+# propagated to handler-api/command-api/observer-api) has not been pushed to GitHub yet.
+# Remove once each crate's `dev` branch carries it.
+[patch."https://github.com/sweengineeringlabs/edge-application-base-api.git"]
+edge-application-base-api = { path = "../base-api" }
+
+[patch."https://github.com/sweengineeringlabs/edge-application-handler-api.git"]
+edge-application-handler-api = { path = "../handler-api" }
+
+[patch."https://github.com/sweengineeringlabs/edge-application-service-api.git"]
+edge-application-service-api = { path = "../service-api" }
+
+[patch."https://github.com/sweengineeringlabs/edge-application-command-api.git"]
+edge-application-command-api = { path = "../command-api" }
+
+[patch."https://github.com/sweengineeringlabs/edge-application-observer-api.git"]
+edge-application-observer-api = { path = "../observer-api" }

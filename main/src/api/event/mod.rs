@@ -24,5 +24,7 @@ pub use dto::{
 pub use errors::{EventError, EventStoreError};
 pub use ins::{InProcessEventBus, MemoryEventStore};
 pub use noop::{NoopAggregate, NoopDomainEvent, NoopEventBus, NoopEventPublisher};
-pub use traits::{Aggregate, DomainEvent, EventBus, EventPublisher, EventSource, EventStore};
+pub use traits::{
+    Aggregate, DomainEvent, EventBus, EventPublisher, EventSource, EventStore, EventStoreSvc,
+};
 pub use vo::{EventEnvelope, ExpectedVersion};
